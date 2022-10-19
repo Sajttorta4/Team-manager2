@@ -13,6 +13,11 @@ public class Gadget {
     @Column(name = "gadget_name", nullable = false)
     private String name;
 
+    @Column(name = "gadget_member", nullable = false)
+    @ManyToOne(targetEntity = Member.class)
+    @JoinColumn(name = "member_id")
+    private Member member;
+
     public long getId() {
         return id;
     }
@@ -37,8 +42,4 @@ public class Gadget {
         this.member = member;
     }
 
-    @Column(name = "gadget_member", nullable = false)
-    @ManyToOne(targetEntity = Member.class)
-    @JoinColumn(name = "member_id")
-    private Member member;
 }

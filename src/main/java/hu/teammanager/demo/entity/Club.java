@@ -17,6 +17,9 @@ public class Club {
     @Column(name = "club_num_members", nullable = false)
     private long numOfMembers;
 
+    @OneToMany(mappedBy = "club")
+    private List<Member> members;
+
     public long getId() {
         return id;
     }
@@ -49,6 +52,5 @@ public class Club {
         this.members = members;
     }
 
-    @OneToMany(mappedBy = "club")
-    private List<Member> members;
+
 }
