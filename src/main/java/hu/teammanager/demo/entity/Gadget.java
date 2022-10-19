@@ -13,6 +13,30 @@ public class Gadget {
     @Column(name = "gadget_name", nullable = false)
     private String name;
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
+    }
+
     @Column(name = "gadget_member", nullable = false)
     @ManyToOne(targetEntity = Member.class)
     @JoinColumn(name = "member_id")

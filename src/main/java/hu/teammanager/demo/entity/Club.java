@@ -17,6 +17,38 @@ public class Club {
     @Column(name = "club_num_members", nullable = false)
     private long numOfMembers;
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public long getNumOfMembers() {
+        return numOfMembers;
+    }
+
+    public void setNumOfMembers(long numOfMembers) {
+        this.numOfMembers = numOfMembers;
+    }
+
+    public List<Member> getMembers() {
+        return members;
+    }
+
+    public void setMembers(List<Member> members) {
+        this.members = members;
+    }
+
     @OneToMany(mappedBy = "club")
     private List<Member> members;
 }
